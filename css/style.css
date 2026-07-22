@@ -1,0 +1,430 @@
+/* ============================================================
+   SAB — Student Advisory Board
+   Design tokens
+   ============================================================ */
+:root {
+  --accent:   #C8102E; /* Northeastern Red — the single accent color */
+
+  --ink:      #000000;
+  --ink-soft: #000000;
+  --paper:    #FFFFFF;
+  --paper-soft: #FAF9F6;
+  --line:     rgba(28, 26, 30, 0.12);
+
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans:  "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --max: 960px;
+  --measure: 580px;
+  --radius: 8px;
+
+  /* Fixed spacing scale — used instead of em-based margins so
+     vertical rhythm stays consistent regardless of the type size
+     it's attached to. */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+  --space-6: 104px;
+
+  /* Space around section rules — twice as much above the rule
+     as below it. Note: these two values ADD TOGETHER for the
+     total visible gap (one section's bottom-padding + the next
+     section's top-padding), so keep that combined total in mind
+     when adjusting. */
+  --rule-gap-above: 64px;
+  --rule-gap-below: 32px;
+}
+
+.col {
+  max-width: var(--measure);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--serif);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: inherit; }
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+/* ============================================================
+   Typography
+   ============================================================ */
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-3);
+}
+
+h1 {
+  font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.35rem, 2.1vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0 0 var(--space-2);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  hanging-punctuation: allow-end;
+}
+
+p:last-child { margin-bottom: 0; }
+
+.lede {
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  font-style: italic;
+  margin: 0 0 var(--space-3);
+}
+
+em { font-style: italic; }
+
+/* ============================================================
+   Nav
+   ============================================================ */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: saturate(180%) blur(8px);
+  z-index: 20;
+}
+
+.meeting-banner {
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  padding: 10px 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 28px;
+  max-width: var(--max);
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.camd-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.wordmark span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  border-bottom-color: var(--accent);
+}
+
+.btn {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: var(--radius);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(200, 16, 46, 0.28);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+
+.btn-secondary:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* ============================================================
+   Sections
+   ============================================================ */
+section {
+  padding-top: var(--rule-gap-below);
+  padding-bottom: var(--rule-gap-above);
+}
+
+section + section {
+  border-top: 1px solid var(--line);
+}
+
+.hero {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-4);
+}
+
+.hero h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* Shared plain list style — used for advisor duties, majors/minors,
+   and the apply-page checklist. Replaces pill/chip tags. */
+.plain-list {
+  list-style: none;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.plain-list li {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  hanging-punctuation: allow-end;
+}
+
+.list-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-top: 10px;
+  flex-shrink: 0;
+  background: var(--accent);
+}
+
+.cta-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: var(--space-3);
+}
+
+/* ============================================================
+   Board members page
+   ============================================================ */
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 32px;
+  margin-top: 36px;
+}
+
+.board-card {
+  text-align: center;
+}
+
+.board-photo-wrap {
+  width: 148px;
+  height: 148px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  padding: 4px;
+  background: var(--accent);
+}
+
+.board-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+
+.board-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 2px;
+}
+
+.board-type {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.board-major {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.board-photo-wrap--placeholder {
+  background: #D9D9D9;
+  padding: 0;
+}
+
+.board-placeholder-text {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #9A9A9A;
+}
+
+.board-empty {
+  font-family: var(--sans);
+  color: var(--ink-soft);
+  border: 1.5px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 48px 24px;
+  text-align: center;
+  margin-top: 36px;
+}
+
+/* ============================================================
+   Meeting notes / doc embed
+   ============================================================ */
+.doc-embed-wrap {
+  margin-top: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(28,26,30,0.06);
+  aspect-ratio: 8.5 / 10.2;
+  background: var(--paper-soft);
+}
+
+.doc-embed-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.doc-fallback {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 14px;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 36px 0 60px;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.site-footer a { color: var(--accent); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 760px) {
+  section { padding-top: 24px; padding-bottom: 48px; }
+  .hero { padding-top: var(--space-4); padding-bottom: 32px; }
+  .nav { padding: 16px 20px; }
+  .board-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
+
+  /* Reduce type-scale contrast on small screens — headings sit
+     closer to body size rather than towering over it. */
+  h1 { font-size: 1.55rem; line-height: 1.25; }
+  h2 { font-size: 1.2rem; }
+  .lede { font-size: 1.05rem; }
+}
+
+@media (max-width: 520px) {
+  .wrap { padding-left: 20px; padding-right: 20px; }
+  .nav-links { gap: 16px; }
+  .board-grid { grid-template-columns: 1fr; }
+  .board-photo-wrap { width: 128px; height: 128px; }
+  .doc-embed-wrap { aspect-ratio: 3 / 4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}

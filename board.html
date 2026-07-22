@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Board Members — Student Advisory Board</title>
+<meta name="description" content="Meet the AY25–26 Student Advisory Board members for Art + Design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Space+Grotesk:wght@500;600;700&family=Work+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand-lockup" href="index.html">
+      <img src="images/camd-logo.svg" alt="Northeastern University" class="camd-logo" onerror="this.style.display='none';">
+      <span class="wordmark">SAB<span>.</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="board.html" aria-current="page">Board Members</a></li>
+      <li><a href="meeting-notes.html">Meeting Notes</a></li>
+    </ul>
+    <a class="btn btn-primary" href="apply.html">Apply here →</a>
+  </nav>
+</header>
+
+<div id="meeting-banner" class="meeting-banner"></div>
+
+<main>
+
+  <section class="hero wrap">
+    <div class="col">
+      <h1>Board <em>Members</em></h1>
+      <p class="lede">Meet this year's board members.</p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div id="board-grid" class="board-grid"></div>
+    <p id="board-empty" class="board-empty" hidden>Board members will appear here soon.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Art + Design · Student Advisory Board · Questions? Email <a href="mailto:s.hodara@northeastern.edu">Sofie Hodara</a>
+  </div>
+</footer>
+
+<!-- ============================================================
+     BOARD MEMBERS — edit this list to add/remove members.
+     Add a new { } block for each person, separated by commas.
+     "photo" can be a filename in images/board/, or a full https:// URL.
+     ============================================================ -->
+<script id="board-data" type="application/json">
+[
+  {
+    "name": "Sofie Hodara",
+    "memberType": "Faculty Representative",
+    "majorMinor": "Interaction Design, XR",
+    "photo": "https://d3tvevvhad9ws1.cloudfront.net/wp-content/uploads/2022/01/SofieHodara_1-1-1536x1536.png"
+  },
+  {
+    "name": "Jamal Thorne",
+    "memberType": "Faculty Representative",
+    "majorMinor": "Fundamentals, XR, Creative Media",
+    "photo": "https://d3tvevvhad9ws1.cloudfront.net/wp-content/uploads/2018/03/AD_Thorne_J0954008.rev_-e1521484282889.jpg"
+  },
+  { "placeholder": true },
+  { "placeholder": true },
+  { "placeholder": true },
+  { "placeholder": true }
+]
+</script>
+
+<script src="js/board.js"></script>
+<script src="js/meeting-banner.js"></script>
+</body>
+</html>
