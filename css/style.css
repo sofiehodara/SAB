@@ -239,7 +239,7 @@ em { font-style: italic; }
   cursor: pointer;
 }
 
-.btn:hover { transform: translateY(-.25px); }
+.btn:hover { transform: translateY(-.5px); }
 
 .btn-primary {
   background: var(--accent);
