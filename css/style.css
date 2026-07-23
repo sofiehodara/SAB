@@ -122,13 +122,44 @@ em { font-style: italic; }
 .meeting-banner {
   background: var(--accent);
   color: #fff;
-  text-align: center;
   font-family: var(--sans);
   font-weight: 600;
   font-size: 0.85rem;
   letter-spacing: 0.02em;
-  padding: 10px 20px;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
 }
+
+.meeting-banner-track {
+  display: inline-flex;
+  align-items: center;
+  animation: marquee 22s linear infinite;
+  will-change: transform;
+}
+
+.meeting-banner-track span {
+  padding: 0 2.5rem;
+  flex-shrink: 0;
+}
+
+.meeting-banner-track span::after {
+  content: "•";
+  margin-left: 2.5rem;
+  opacity: 0.6;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meeting-banner-track { animation: none; }
+  .meeting-banner { text-align: center; overflow: visible; white-space: normal; }
+}
+
 
 .nav {
   display: flex;
