@@ -208,12 +208,12 @@ em { font-style: italic; }
   cursor: pointer;
 }
 
-.btn:hover { transform: translateY(-1px); }
+.btn:hover { transform: translateY(-.25px); }
 
 .btn-primary {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 6px 16px rgba(200, 16, 46, 0.28);
+  box-shadow: 0 1px 1px rgba(200, 16, 46, 0.24);
 }
 
 .btn-secondary {
