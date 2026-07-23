@@ -1,5 +1,5 @@
 const NEXT_MEETING_TEXT = "JOIN THE STUDENT ADVISORY BOARD TODAY";
-const REPEAT_COUNT = 8; // how many times the phrase repeats in the loop
+const REPEAT_COUNT = 4; // how many times the phrase repeats in the loop
 
 document.addEventListener("DOMContentLoaded", () => {
   const el = document.getElementById("meeting-banner");
