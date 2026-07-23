@@ -280,6 +280,15 @@ section + section {
   font-style: normal;
 }
 
+.hero-kicker {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
 /* Shared plain list style — used for advisor duties, majors/minors,
    and the apply-page checklist. Replaces pill/chip tags. */
 .plain-list {
