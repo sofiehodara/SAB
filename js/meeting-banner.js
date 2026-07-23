@@ -1,8 +1,9 @@
-// Edit the line below to update the "next meeting" banner shown
-// at the top of every page. Just change the text in quotes and save.
-const NEXT_MEETING_TEXT = "Next meeting: TBD";
+const NEXT_MEETING_TEXT = "JOIN THE SAB TODAY";
+const REPEAT_COUNT = 8; // how many times the phrase repeats in the loop
 
 document.addEventListener("DOMContentLoaded", () => {
   const el = document.getElementById("meeting-banner");
-  if (el) el.textContent = NEXT_MEETING_TEXT;
+  if (!el) return;
+  const spans = Array(REPEAT_COUNT).fill(`<span>${NEXT_MEETING_TEXT}</span>`).join("");
+  el.innerHTML = `<div class="meeting-banner-track">${spans}</div>`;
 });
