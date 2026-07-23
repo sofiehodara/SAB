@@ -289,6 +289,52 @@ section + section {
   color: var(--accent);
   margin: 0 0 14px;
 }
+
+.hero-grid {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.hero-main {
+  flex: 1 1 480px;
+}
+
+.meeting-card {
+  flex: 0 0 260px;
+  background: var(--paper-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px 26px;
+}
+
+.meeting-card-label {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+
+.meeting-card-row {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.meeting-card-row:last-child { margin-bottom: 0; }
+
+.meeting-card-row .label {
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+
 /* Shared plain list style — used for advisor duties, majors/minors,
    and the apply-page checklist. Replaces pill/chip tags. */
 .plain-list {
