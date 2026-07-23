@@ -3,8 +3,9 @@
    Design tokens
    ============================================================ */
 :root {
-  --accent:   #C8102E; /* Northeastern Red — the single accent color */
-
+--accent:   #C8102E; /* Northeastern Red — clickable elements only */
+--gray-accent: #6B6B6B; /* decorative/informational accent */
+   
   --ink:      #000000;
   --ink-soft: #000000;
   --paper:    #FFFFFF;
@@ -276,7 +277,7 @@ section + section {
 }
 
 .hero h1 em {
-  color: var(--accent);
+  color: var(--gray-accent);
   font-style: normal;
 }
 
@@ -286,8 +287,8 @@ section + section {
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
   margin: 0 0 14px;
+    color: var(--gray-accent);
 }
 
 .hero-grid {
@@ -360,7 +361,7 @@ section + section {
   border-radius: 50%;
   margin-top: 10px;
   flex-shrink: 0;
-  background: var(--accent);
+  background: var(--gray-accent);
 }
 
 .cta-row {
