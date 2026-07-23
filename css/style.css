@@ -494,7 +494,10 @@ section + section {
   section { padding-top: 24px; padding-bottom: 48px; }
   .hero { padding-top: var(--space-4); padding-bottom: 32px; }
   .nav { padding: 16px 20px; }
-  .board-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
+  .board-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; 
+              .hero-grid { gap: 32px; }
+.meeting-card { flex-basis: auto; width: 100%; max-width: 280px; margin-left: auto; }
+              }
 
   /* Reduce type-scale contrast on small screens — headings sit
      closer to body size rather than towering over it. */
