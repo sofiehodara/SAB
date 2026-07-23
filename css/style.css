@@ -277,7 +277,6 @@ section + section {
 }
 
 .hero h1 em {
-  color: var(--gray-accent);
   font-style: normal;
 }
 
