@@ -449,6 +449,21 @@ section + section {
 /* ============================================================
    Meeting notes / doc embed
    ============================================================ */
+.form-embed-wrap {
+  margin-top: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(28,26,30,0.06);
+  background: var(--paper-soft);
+}
+
+.form-embed-wrap iframe {
+  width: 100%;
+  height: 900px;
+  border: 0;
+  display: block;
+}
 .doc-embed-wrap {
   margin-top: 30px;
   border: 1px solid var(--line);
