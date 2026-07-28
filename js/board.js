@@ -23,16 +23,28 @@ function loadBoard() {
       const photo = m.photo || "images/placeholder-avatar.svg";
       const name = escapeHtml(m.name || "");
       const type = escapeHtml(m.memberType || "");
-      const major = escapeHtml(m.majorMinor || "");
+      const pronouns = escapeHtml(m.pronouns || "");
+      const major = escapeHtml(m.major || "");
+      const minor = escapeHtml(m.minor || "");
+      const researchArea = escapeHtml(m.researchArea || "");
+      const typeClass = /faculty/i.test(type)
+        ? "board-type--faculty"
+        : /student/i.test(type)
+        ? "board-type--student"
+        : "";
+
       return `
         <div class="board-card">
-          <div class="board-photo-wrap">
+          <div class="board-photo-wrap ${typeClass}">
             <img src="${photo}" alt="${name}" loading="lazy"
                  onerror="this.onerror=null;this.src='images/placeholder-avatar.svg';">
           </div>
-          <div class="board-type">${type}</div>
+          <div class="board-type ${typeClass}">${type}</div>
           <div class="board-name">${name}</div>
-          <div class="board-major">${major}</div>
+          ${pronouns ? `<div class="board-pronouns">${pronouns}</div>` : ""}
+          ${major ? `<div class="board-major">Major: ${major}</div>` : ""}
+          ${minor ? `<div class="board-minor">Minor: ${minor}</div>` : ""}
+          ${researchArea ? `<div class="board-research">Research: ${researchArea}</div>` : ""}
         </div>
       `;
     }).join("");
